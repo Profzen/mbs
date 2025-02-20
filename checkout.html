@@ -37,6 +37,51 @@
       </div>
     </nav>
   </header>
+    <!-- Section du panier sous forme de tableau -->
+    <section class="checkout-section">
+      <h2>Votre Panier</h2>
+      <table id="cart-table">
+        <thead>
+          <tr>
+            <th>Produit</th>
+            <th>Prix</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Les lignes seront générées dynamiquement par le JS -->
+        </tbody>
+        <tfoot>
+          <tr>
+            <td><strong>Total</strong></td>
+            <td id="total-price"></td>
+          </tr>
+        </tfoot>
+      </table>
+    </section>
+
+    <!-- Section du formulaire client -->
+    <section class="checkout-form-section">
+      <h2>Vos informations</h2>
+      <form id="checkoutForm">
+        <div class="form-group">
+          <label for="firstName">Prénom</label>
+          <input type="text" id="firstName" name="firstName" required>
+        </div>
+        <div class="form-group">
+          <label for="lastName">Nom</label>
+          <input type="text" id="lastName" name="lastName" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Adresse email</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="phone">Numéro de téléphone</label>
+          <input type="tel" id="phone" name="phone" required>
+        </div>
+        <button type="submit">Valider la commande</button>
+      </form>
+    </section>
 
     <!-- Section panier -->
     <section class="checkout">

@@ -196,3 +196,50 @@ document.getElementById('hamburger-menu')?.addEventListener('click', function() 
   const navLinks = document.querySelector('.nav-links');
   navLinks.classList.toggle('mobile-active');
 });
+
+// Fonction pour charger et afficher le contenu du panier dans le tableau
+function loadCart() {
+  const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+  const tableBody = document.querySelector('#cart-table tbody');
+  const totalPriceElement = document.getElementById('total-price');
+  tableBody.innerHTML = ''; // Vider le tableau
+
+  let total = 0;
+  cartItems.forEach(item => {
+    const row = document.createElement('tr');
+    
+    // Création des cellules pour le nom du produit et le prix
+    const nameCell = document.createElement('td');
+    nameCell.textContent = item.name;
+    const priceCell = document.createElement('td');
+    priceCell.textContent = item.price + ' €';
+    
+    row.appendChild(nameCell);
+    row.appendChild(priceCell);
+    tableBody.appendChild(row);
+    
+    total += item.price; // Si des quantités sont gérées, multiplier par la quantité
+  });
+  
+  totalPriceElement.textContent = total.toFixed(2) + ' €';
+}
+
+// Gestion de la soumission du formulaire de checkout
+document.getElementById('checkoutForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  // Récupérer les valeurs du formulaire
+  const firstName = document.getElementById('firstName').value;
+  const lastName  = document.getElementById('lastName').value;
+  const email     = document.getElementById('email').value;
+  const phone     = document.getElementById('phone').value;
+  
+  // Ici, vous pouvez ajouter la logique de validation et de paiement
+  alert(`Merci ${firstName} ${lastName}, votre commande est en cours de traitement.`);
+  
+  // Optionnel : Vider le panier après validation
+  localStorage.removeItem('cart');
+  loadCart();
+});
+
+// Charger le panier dès que le DOM est prêt
+document.addEventListener('DOMContentLoaded', loadCart);
