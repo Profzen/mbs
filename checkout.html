@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paiement - Finaliser votre commande</title>
+    <link rel="stylesheet" href="style.css"> <!-- Lien vers le fichier CSS -->
+</head>
+<body>
+  <header>
+    <!-- Barre de navigation avec logo et boutons de connexion/inscription -->
+    <nav class="navbar">
+      <div class="logo">
+        <img src="flex.jpg" alt="logo" class="logo">
+      </div>
+
+      <a href="cart.html"><button onclick="openCartModal()">
+        <span class="cart-icon">🛒</span>
+        <span class="cart-counter" id="cart-counter">0</span>
+        Panier
+      </button></a>
+
+      <div class="hamburger-menu" id="hamburger-menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+
+      <div class="nav-links">
+        <a href="index.html"><button>Accueil</button></a>
+        <!-- Bouton qui ouvre nos abonnements -->
+        <a href="subscription.html"><button >Nos offres</button></a>
+        
+        <!-- Bouton qui ouvre la modale de connexion -->
+        <button onclick="openLoginModal()">Se connecter</button>
+        
+      </div>
+    </nav>
+  </header>
+
+    <!-- Section panier -->
+    <section class="checkout">
+        <h2>Votre Panier</h2>
+        <div id="cart-details"></div>
+
+        <div class="payment-options">
+            <h3>Choisissez un mode de paiement</h3>
+            <button onclick="payWithMobileMoney()">Payer par Mobile Money</button>
+            <button onclick="payWithVisa()">Payer par Carte Visa</button>
+        </div>
+    </section>
+    <!-- ===== Modale de Connexion (Réutilisée de la page d'accueil) ===== -->
+  <div id="loginModal" class="modal">
+    <div class="modal-content">
+      <!-- Bouton de fermeture -->
+      <span class="close" onclick="closeLoginModal()">&times;</span>
+      <h2>Se connecter</h2>
+      <form id="loginForm">
+        <label for="loginEmail">Email :</label>
+        <input type="email" id="loginEmail" name="loginEmail" required>
+        <label for="loginPassword">Mot de passe :</label>
+        <input type="password" id="loginPassword" name="loginPassword" required>
+        <button type="submit">Se connecter</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ===== Modale d'Inscription (Réutilisée) ===== -->
+  <div id="registerModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeRegisterModal()">&times;</span>
+      <h2>S'inscrire</h2>
+      <form id="registerForm">
+        <label for="registerEmail">Email :</label>
+        <input type="email" id="registerEmail" name="registerEmail" required>
+        <label for="registerPassword">Mot de passe :</label>
+        <input type="password" id="registerPassword" name="registerPassword" required>
+        <button type="submit">S'inscrire</button>
+      </form>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2025 Abonnement Platform</p>
+</footer>
+
+<script src="script.js"></script> <!-- Lien vers le fichier JavaScript -->
+
+  
+</body>
+</html>
