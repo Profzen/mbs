@@ -683,10 +683,23 @@ button[type="submit"]:hover {
   background-color: #0056b3;
 }
 
+
 /* Responsive */
 @media (max-width: 768px) {
-  #cart-table, .checkout-form-section {
+  main {
+    margin: 20px auto;
+    padding: 0 10px;
     width: 100%;
-    margin: 20px 0;
+  }
+  
+  /* Pour le tableau, permettre un défilement horizontal si nécessaire */
+  #cart-table {
+    display: block;
+    overflow: hidden;
+  }
+  
+  /* Ajuster les marges et le padding des sections */
+  .checkout-section, .checkout-form-section {
+    margin-bottom: 20px;
   }
 }
