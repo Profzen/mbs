@@ -735,6 +735,6 @@ button[type="submit"]:hover {
     width: 100%;
     margin: 0 auto; /* Centrer le tableau */
     display: block;
-    overflow-x: auto;
+    overflow-x: hidden;
   }
 }
