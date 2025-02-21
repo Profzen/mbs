@@ -683,19 +683,28 @@ button[type="submit"]:hover {
   background-color: #0056b3;
 }
 
-/* Footer */
-footer {
-  text-align: center;
-  padding: 15px 0;
-  background-color: #007BFF;
-  color: #fff;
-  margin-top: 40px;
-}
+
 
 /* Responsive */
 @media (max-width: 768px) {
   #cart-table, .checkout-form-section {
     width: 100%;
-    margin: 20px 0;
+   
+  }
+  main {
+    margin: 20px auto;
+    padding: 10px 10px;
+    width: 100%;
+  }
+  
+  /* Pour le tableau, permettre un défilement horizontal si nécessaire */
+  #cart-table {
+    display: block;
+    overflow-x: auto;
+  }
+  
+  /* Ajuster les marges et le padding des sections */
+  .checkout-section, .checkout-form-section {
+    margin-bottom: 20px;
   }
 }
