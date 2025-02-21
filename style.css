@@ -724,7 +724,7 @@ button[type="submit"]:hover {
   /* Pour le tableau, permettre un défilement horizontal si nécessaire */
   #cart-table {
     display: block;
-    overflow-x: auto;
+    overflow-x: hidden;
   }
   
   /* Ajuster les marges et le padding des sections */
