@@ -713,7 +713,7 @@ button[type="submit"]:hover {
   background-color: #0056b3;
 }
 
-/* Responsive */
+/* Responsive - pour mobile */
 @media (max-width: 768px) {
   main {
     margin: 20px auto;
@@ -721,14 +721,20 @@ button[type="submit"]:hover {
     width: 100%;
   }
   
-  /* Pour le tableau, permettre un défilement horizontal si nécessaire */
-  #cart-table {
-    display: block;
-    overflow-x: auto;
+  /* Pour centrer le contenu du tableau et du formulaire */
+  .checkout-section,
+  .checkout-form-section {
+    margin: 0 auto 20px auto;
+    width: 100%;
+    max-width: 100%; /* Assure que la largeur est à 100% de l'écran */
+    padding: 0 10px; /* Optionnel, pour ajouter un peu de padding */
   }
   
-  /* Ajuster les marges et le padding des sections */
-  .checkout-section, .checkout-form-section {
-    margin-bottom: 20px;
+  /* Pour le tableau, éviter un margin droit excessif */
+  #cart-table {
+    width: 100%;
+    margin: 0 auto; /* Centrer le tableau */
+    display: block;
+    overflow-x: auto;
   }
 }
