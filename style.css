@@ -724,12 +724,12 @@ button[type="submit"]:hover {
   /* Pour le tableau, permettre un défilement horizontal si nécessaire */
   #cart-table {
     display: block;
-    overflow-x: hidden;
+    overflow-x: auto;
   }
   
   /* Ajuster les marges et le padding des sections */
   .checkout-section, .checkout-form-section {
     margin-bottom: 20px;
-    margin-left: 0px;
+   
   }
 }
