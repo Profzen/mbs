@@ -641,6 +641,36 @@ body {
   background-color: #f9f9f9;
 }
 
+/* Checkout Section - Tableau du panier */
+.checkout-section h2 {
+  margin-bottom: 20px;
+  color: #007BFF;
+  text-align: center;
+}
+#cart-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  margin-bottom: 40px;
+}
+#cart-table th, #cart-table td {
+  padding: 15px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+#cart-table th {
+  background-color: #007BFF;
+  color: #fff;
+}
+#cart-table tfoot td {
+  font-size: 18px;
+  font-weight: bold;
+  background-color: #f9f9f9;
+}
+
 /* Checkout Form Section */
 .checkout-form-section {
   background-color: #fff;
@@ -683,15 +713,18 @@ button[type="submit"]:hover {
   background-color: #0056b3;
 }
 
-
+/* Footer */
+footer {
+  text-align: center;
+  padding: 15px 0;
+  background-color: #007BFF;
+  color: #fff;
+  margin-top: 40px;
+}
 
 /* Responsive */
 @media (max-width: 768px) {
-  #cart-table, .checkout-form-section {
-    width: 100%;
-    margin: 20px 0;
-  }
-    main {
+  main {
     margin: 20px auto;
     padding: 0 10px;
     width: 100%;
@@ -700,7 +733,7 @@ button[type="submit"]:hover {
   /* Pour le tableau, permettre un défilement horizontal si nécessaire */
   #cart-table {
     display: block;
-    overflow-x: hidden;
+    overflow-x: auto;
   }
   
   /* Ajuster les marges et le padding des sections */
