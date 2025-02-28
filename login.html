@@ -60,13 +60,25 @@
         <label for="name">Nom :</label>
         <input type="text" id="name" name="name" required>
         <label for="firstname">Prénom :</label>
-        <input type="text" id="firstname" name="firstname" required>
+        <input type="text" id="firstname" name="firstname" placeholder="Prénom" required>
         <label for="registerEmail">Email :</label>
         <input type="email" id="registerEmail" name="registerEmail" required>
         <label for="registerPassword">Mot de passe :</label>
         <input type="password" id="registerPassword" name="registerPassword" required>
         <button type="submit">S'inscrire</button>
       </form>
+      <script>
+        document.getElementById('register-form').addEventListener('submit', function(event) {
+          event.preventDefault();
+          
+          const firstName = document.getElementById('first-name').value;
+          const lastName = document.getElementById('last-name').value;
+          const email = document.getElementById('email').value;
+          const password = document.getElementById('password').value;
+          
+          registerUser(firstName, lastName, email, password);
+        });
+      </script>
     </div>
   </div>
 

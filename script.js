@@ -265,3 +265,95 @@ function loadTransactions() {
 // Charger les transactions lorsque le DOM est prêt
 document.addEventListener("DOMContentLoaded", loadTransactions);
 
+
+// Fonction pour inscrire un utilisateur
+function registerUser(firstName, lastName, email, password) {
+  fetch('http://127.0.0.1:5000/api/auth/register', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      firstName: firstName,
+      lastName: lastName,
+      email: email,
+      password: password
+    })
+  })
+  .then(response => response.json())
+  .then(data => {
+    if (data.message) {
+      console.log('Inscription réussie:', data);
+    } else {
+      console.error('Erreur:', data.error);
+    }
+  })
+  .catch(error => console.error('Erreur de connexion:', error));
+}
+
+// Fonction pour connecter un utilisateur
+function loginUser(email, password) {
+  fetch('http://127.0.0.1:5000/api/auth/login', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      email: email,
+      password: password
+    })
+  })
+  .then(response => response.json())
+  .then(data => {
+    if (data.token) {
+      localStorage.setItem('token', data.token); // Sauvegarder le token JWT
+      console.log('Connexion réussie:', data);
+    } else {
+      console.error('Erreur:', data.error);
+    }
+  })
+  .catch(error => console.error('Erreur de connexion:', error));
+}
+
+// Fonction pour récupérer les produits
+function getProducts() {
+  const token = localStorage.getItem('token'); // Récupérer le token JWT
+  
+  fetch('http://127.0.0.1:5000/api/products', {
+    method: 'GET',
+    headers: {
+      'Authorization': 'Bearer ' + token // Ajouter le token à l'en-tête
+    }
+  })
+  .then(response => response.json())
+  .then(data => {
+    console.log('Produits récupérés:', data);
+  })
+  .catch(error => console.error('Erreur lors de la récupération des produits:', error));
+}
+
+// Fonction pour ajouter un produit (admin)
+function addProduct(name, description, price, image) {
+  const token = localStorage.getItem('token'); // Récupérer le token JWT
+  
+  fetch('http://127.0.0.1:5000/api/products', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ' + token // Ajouter le token à l'en-tête
+    },
+    body: JSON.stringify({
+      name: name,
+      description: description,
+      price: price,
+      image: image
+    })
+  })
+  .then(response => response.json())
+  .then(data => {
+    console.log('Produit ajouté:', data);
+  })
+  .catch(error => console.error('Erreur lors de l\'ajout du produit:', error));
+}
+
+
