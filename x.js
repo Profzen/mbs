@@ -213,3 +213,22 @@ document.getElementById('hamburger-menu')?.addEventListener('click', function() 
 
 document.addEventListener('DOMContentLoaded', updateCartCounter);
 
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+

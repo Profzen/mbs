@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Votre Panier</title>
-    <link rel="stylesheet" href="style.css"> <!-- Lien vers le fichier CSS -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mes Transactions - Abonnement Platform</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <!-- En-tête commun -->
   <header>
     <!-- Barre de navigation avec logo et boutons de connexion/inscription -->
     <nav class="navbar">
@@ -14,7 +15,7 @@
         <a href="index.html"><img src="logo.png" alt="logo" class="logo"></a>
       </div>
 
-      <a href="cart.html"><button onclick="openCartModal()">
+      <a href="cart.html"><button  onclick="openCartModal()">
         <span class="cart-icon">🛒</span>
         <span class="cart-counter" id="cart-counter">0</span>
         Panier
@@ -38,27 +39,30 @@
     </nav>
   </header>
 
-    <!-- Section du panier -->
-    <section class="cart">
-        <h2>Articles dans votre panier</h2>
-        <div id="cart-items"></div>
-
-        <div class="cart-actions">
-            <button onclick="goToCheckout()">Finaliser la commande</button>
-            <button onclick="window.location.href='transactions.html'" class="transactions-button">Mes transactions</button>
-        </div>
+  <!-- Section des transactions -->
+  <main>
+    <section class="transactions-section">
+      <h2>Historique de mes transactions</h2>
+      <table id="transactions-table">
+        <thead>
+          <tr>
+            <th>ID Commande</th>
+            <th>Date</th>
+            <th>Total</th>
+            <th>Statut</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Les lignes seront générées dynamiquement par transactions.js -->
+        </tbody>
+      </table>
     </section>
-    
+  </main>
 
-    <footer>
-        <p>© 2025 Abonnement Platform</p>
-    </footer>
+  <footer>
+    <p>© 2025 Abonnement Platform</p>
+  </footer>
 
-    <script src="script.js"></script> <!-- Lien vers le fichier JavaScript -->
-    <script>
-        // Appelle la fonction pour afficher le contenu du panier dès que la page est prête
-        displayCart();
-    </script>
-    
+  <script src="script.js"></script>
 </body>
 </html>

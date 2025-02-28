@@ -235,7 +235,8 @@ document.getElementById('checkoutForm').addEventListener('submit', function(e) {
   
   // Ici, vous pouvez ajouter la logique de validation et de paiement
   alert(`Merci ${firstName} ${lastName}, votre commande est en cours de traitement.`);
-  
+
+  updateCartCounter(); // Actualise le compteur
   // Optionnel : Vider le panier après validation
   localStorage.removeItem('cart');
   loadCart();
@@ -243,3 +244,24 @@ document.getElementById('checkoutForm').addEventListener('submit', function(e) {
 
 // Charger le panier dès que le DOM est prêt
 document.addEventListener('DOMContentLoaded', loadCart);
+
+// Fonction pour charger les transactions dans le tableau
+function loadTransactions() {
+  const tableBody = document.querySelector("#transactions-table tbody");
+  tableBody.innerHTML = ""; // Vider le contenu
+
+  transactions.forEach(tx => {
+    const row = document.createElement("tr");
+    row.innerHTML = `
+      <td>${tx.id}</td>
+      <td>${tx.date}</td>
+      <td>${tx.total.toFixed(2)} €</td>
+      <td>${tx.status}</td>
+    `;
+    tableBody.appendChild(row);
+  });
+}
+
+// Charger les transactions lorsque le DOM est prêt
+document.addEventListener("DOMContentLoaded", loadTransactions);
+

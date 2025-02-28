@@ -735,6 +735,61 @@ button[type="submit"]:hover {
     width: 100%;
     margin: 0 auto; /* Centrer le tableau */
     display: block;
-    overflow-x: auto;
+    overflow-x: hidden;
+  }
+}
+
+/* Section Transactions */
+.transactions-section {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.transactions-section h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #007BFF;
+}
+
+#transactions-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  margin-bottom: 40px;
+}
+
+#transactions-table th,
+#transactions-table td {
+  padding: 15px;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+
+#transactions-table th {
+  background-color: #007BFF;
+  color: #fff;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 15px 0;
+  background-color: #007BFF;
+  color: #fff;
+  margin-top: 40px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .transactions-section {
+    padding: 0 10px;
+  }
+  #transactions-table th,
+  #transactions-table td {
+    padding: 10px;
   }
 }
