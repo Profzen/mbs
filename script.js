@@ -237,6 +237,7 @@ document.getElementById('checkoutForm').addEventListener('submit', function(e) {
   alert(`Merci ${firstName} ${lastName}, votre commande est en cours de traitement.`);
 
   updateCartCounter(); // Actualise le compteur
+  this.reset();
   // Optionnel : Vider le panier après validation
   localStorage.removeItem('cart');
   loadCart();
