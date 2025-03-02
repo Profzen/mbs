@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulaire d'Adhésion</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main>
+    <h2>Formulaire d'Adhésion</h2>
+    <form id="adhesion-form">
+      <label for="offre">Offre :</label>
+      <input type="text" id="offre" name="offre" readonly>
+
+      <label for="nom">Nom :</label>
+      <input type="text" id="nom" name="nom" required>
+
+      <label for="prenom">Prénom :</label>
+      <input type="text" id="prenom" name="prenom" required>
+
+      <label for="email">Email :</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="telephone">Téléphone :</label>
+      <input type="tel" id="telephone" name="telephone" required>
+
+      <label for="message">Message (optionnel) :</label>
+      <textarea id="message" name="message"></textarea>
+
+      <button type="submit">Soumettre</button>
+    </form>
+  </main>
+
+  <script>
+    // Récupération des informations de l'offre depuis l'URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const offre = urlParams.get('offre');
+    document.getElementById('offre').value = offre;
+
+    // Envoi du formulaire par email via mailto
+    document.getElementById('adhesion-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const formData = new FormData(this);
+      const nom = formData.get("nom");
+      const prenom = formData.get("prenom");
+      const email = formData.get("email");
+      const telephone = formData.get("telephone");
+      const message = formData.get("message");
+      const offre = formData.get("offre");
+
+      const mailtoLink = `mailto:massangtoyi@gmail.com?subject=Adhésion à ${offre}&body=
+        Nom: ${nom}%0D%0A
+        Prénom: ${prenom}%0D%0A
+        Email: ${email}%0D%0A
+        Téléphone: ${telephone}%0D%0A
+        Message: ${message}`;
+
+      window.location.href = mailtoLink;
+    });
+  </script>
+</body>
+</html>

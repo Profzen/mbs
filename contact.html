@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact | Tontine Connect</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="index.html"><img src="logo.jpg" class="logo" alt="Logo"></a>  
+        <button class="menu-toggle" aria-label="Toggle Menu">
+          &#9776;
+        </button>
+        <ul class="nav-links">
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="apropos.html">À propos</a></li>
+          <li><a href="offres.html">Offres</a></li>
+          <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    
+        <main>
+          <section class="hero-section">
+            <h1>Contactez-Nous</h1>
+            <p>Besoin d’informations ou d’aide ? Remplissez le formulaire ci-dessous.</p>
+          </section>
+        
+          <!-- Conteneur regroupant le formulaire et le contact direct -->
+          <section class="contact-container">
+            <!-- Formulaire de contact à gauche -->
+            <div class="contact-form">
+              <form action="mailto:massangtoyi@gmail.com" method="POST" enctype="text/plain">
+                <label for="name">Nom :</label>
+                <input type="text" id="name" name="name" required  autofocus/>
+        
+                <label for="prenom">Prénom :</label>
+                <input type="text" id="prenom" name="prenom" required />
+        
+                <label for="email">Email :</label>
+                <input type="email" id="email" name="email" required />
+        
+                <label for="message">Message (indiquez votre offre choisie ou laisser un message):</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+        
+                <button type="submit">Envoyer</button>
+              </form>
+            </div>
+        
+            <!-- Contact Direct à droite -->
+            <div class="direct-contact">
+              <h2>Nous Contacter Directement</h2>
+              <div class="contact-methods">
+                <!-- Bouton WhatsApp -->
+                <a href="https://wa.me/91224470" target="_blank" class="whatsapp-btn">
+                  <img src="https://img.icons8.com/color/48/000000/whatsapp.png" alt="WhatsApp Icon" />
+                  Contactez-nous sur WhatsApp
+                </a>
+        
+                <!-- Numéros d'appel direct -->
+                <div class="call-info">
+                  <p><strong>Appelez-nous :</strong></p>
+                  <ul>
+                    <li><a href="tel:+22891224470">+228 91 22 44 70</a></li>
+                    <li><a href="tel:+22892026792">+228 92 02 67 92</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </section>
+        </main>
+        
+
+    <footer>
+      <p>&copy; 2025 MédédéTontine. Tous droits réservés.</p>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>

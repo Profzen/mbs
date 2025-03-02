@@ -1,115 +1,120 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <!-- Assure que le site s'adapte aux différentes tailles d'écran -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Abonnement Platform</title>
-  <!-- Lien vers le fichier CSS -->
-  <link rel="stylesheet" href="style.css">
+  <title>Accueil - Tontine en ligne</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <!-- ===== Navigation (Header) ===== -->
   <header>
-    <!-- Barre de navigation avec logo et boutons de connexion/inscription -->
-    <nav class="navbar">
-      <div class="logo">
-        <a href="index.html"><img src="logo.png" alt="logo" class="logo"></a>
-      </div>
-
-      <a href="cart.html"><button  onclick="openCartModal()">
-        <span class="cart-icon">🛒</span>
-        <span class="cart-counter" id="cart-counter">0</span>
-        Panier
-      </button></a>
-
-      <div class="hamburger-menu" id="hamburger-menu">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-      </div>
-
-      <div class="nav-links">
-        <a href="index.html"><button>Accueil</button></a>
-        <!-- Bouton qui ouvre nos abonnements -->
-        <a href="subscription.html"><button >Nos offres</button></a>
-        
-        <!-- Bouton qui ouvre la page de connexion -->
-        <a href="login.html"><button >Se connecter</button></a>
-        
-      </div>
+    <nav>
+      <a href="index.html"><img src="logo.jpg" class="logo" alt="Logo"></a>  
+      <button class="menu-toggle" aria-label="Toggle Menu">
+        &#9776;
+      </button>
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Accueil</a></li>
+        <li><a href="apropos.html">À propos</a></li>
+        <li><a href="offres.html">Offres</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
     </nav>
   </header>
-
-  <!-- ===== Section Héros ===== -->
-  <section class="hero">
-    <h2>Bienvenue sur Abonnement Platform</h2>
-    <p>Découvrez nos abonnements exclusifs et profitez d'offres exceptionnelles !</p>
-    <!-- Bouton pour accéder directement au panier (par exemple) -->
-    <!-- Bouton qui ouvre la page des offres -->
-    <a href="subscription.html"><button >Nos offres</button></a>
-  </section>
-
-  <!-- ===== Section pourquoi nous choisir" ===== -->
-  <section class="why-choose-us">
-    <h2>Pourquoi nous choisir</h2>
-    <div class="why-choose-container">
-      <!-- Raison 1 : Qualité exceptionnelle -->
-      <div class="why-choose-item">
-        <img src="flex.jpg" alt="Qualité exceptionnelle" class="why-image">
-        <h3>Qualité exceptionnelle</h3>
-        <p>Des offres sélectionnées avec soin pour garantir une qualité irréprochable.</p>
-      </div>
-      <!-- Raison 2 : Support 24/7 -->
-      <div class="why-choose-item">
-        <img src="flex.jpg" alt="Support 24/7" class="why-image">
-        <h3>Support 24/7</h3>
-        <p>Un service client disponible à tout moment pour répondre à vos questions.</p>
-      </div>
-      <!-- Raison 3 : Prix compétitifs -->
-      <div class="why-choose-item">
-        <img src="flex.jpg" alt="Prix compétitifs" class="why-image">
-        <h3>Prix compétitifs</h3>
-        <p>Des abonnements offrant le meilleur rapport qualité-prix sur le marché.</p>
-      </div>
-      <!-- Raison 4 : Innovation continue -->
-      <div class="why-choose-item">
-        <img src="flex.jpg" alt="Innovation continue" class="why-image">
-        <h3>Innovation continue</h3>
-        <p>Nous innovons constamment pour améliorer votre expérience utilisateur.</p>
-      </div>
-    </div>
-  </section>
   
 
-  <!-- ===== Section "Abonnements Populaires" ===== -->
-  <section class="popular-subscriptions">
-    <h2>Abonnements Populaires</h2>
-    <div class="subscription-container">
-      <div class="subscription-item popular">
-        <img src="flex.jpg" alt="Description de l'offre 1" class="offer-image">
-        <h3>Spotify Premium</h3>
-        <p>10€ / mois</p>
-        <button onclick="addToCart('Spotify Premium', 10)">Ajouter au panier</button>
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Bienvenue sur notre plateforme de tontine : MédédéTontine !</h1>
+        <p>Découvrez des opportunités innovantes pour une gestion simplifiée de vos cotisations.</p>
+        <a href="offres.html" class="cta-button">Voir nos offres</a>
       </div>
-      <div class="subscription-item popular">
-        <img src="flex.jpg" alt="Description de l'offre 1" class="offer-image">
-        <h3>Amazon Prime</h3>
-        <p>12€ / mois</p>
-        <button onclick="addToCart('Amazon Prime', 12)">Ajouter au panier</button>
+    </section>
+
+    <section class="why-choose-us">
+      <h2>Pourquoi Choisir Notre Plateforme ?</h2>
+      <div class="benefits">
+        <div class="benefit-texts">
+          <div class="benefit-text">
+            <h3>Sécurité</h3>
+            <p>Vos cotisations sont gérées de manière fiable avec des validations administratives.</p>
+            <div class="benefit-images">
+              <img src="securite.jpg" alt="Sécurité">
+            </div>
+          </div>
+          <div class="benefit-text">
+            <h3>Flexibilité</h3>
+            <p>Choisissez les offres qui conviennent à votre budget et vos objectifs.</p>
+            <div class="benefit-images">
+              <img src="flex.jpg" alt="Sécurité">
+            </div>
+          </div>
+          <div class="benefit-text">
+            <h3>Transparence</h3>
+            <p>Suivez en temps réel l’évolution de votre tontine et des cotisations.</p>
+            <div class="benefit-images">
+              <img src="trans.jpg" alt="Sécurité">
+            </div>
+          </div>
+        </div>
+        
       </div>
-      <!-- D'autres abonnements populaires peuvent être ajoutés ici -->
-    </div>
-  </section>
+    </section>
+    >    
+    
 
+    <section class="popular-offers">
+      <h2 id="ofpop">Offres Populaires</h2>
+      <div class="offers-list">
+        <div class="offer">
+          <h3>Tontine Express</h3>
+          <p>10 000 FCFA sur 6 mois avec versements mensuels.</p>
+          <a href="contact.html"><button class="offer-button">Adhérer</button></a>
+        </div>
+        <div class="offer">
+          <h3>Tontine Prestige</h3>
+          <p>50 000 FCFA sur 12 mois avec paiements trimestriels.</p>
+          <a href="contact.html"><button class="offer-button">Adhérer</button></a>
+        </div>
+        <div class="offer">
+          <h3>Tontine Familiale</h3>
+          <p>5 000 FCFA sur 3 mois pour petits groupes.</p>
+          <a href="contact.html"><button class="offer-button">Adhérer</button></a>
+        </div>
+      </div>
+    </section>
+    
 
-  <!-- ===== Footer ===== -->
+    
+
+    <section class="how-it-works">
+      <h2>Comment ça Marche ?</h2>
+      <div class="steps">
+        <div>
+          <h3>1. Inscription</h3>
+          <p>Créez votre compte gratuitement sur la plateforme.</p>
+        </div>
+        <div>
+          <h3>2. Participation</h3>
+          <p>Choisissez une tontine adaptée et adhérez facilement.</p>
+        </div>
+        <div>
+          <h3>3. Réception des Fonds</h3>
+          <p>Recevez vos fonds à tour de rôle en toute simplicité.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <button onclick="window.location.href='offres.html'">Rejoignez une Tontine Maintenant</button>
+    </section>
+
+  </main>
+
   <footer>
-    <p>© 2025 Abonnement Platform</p>
-</footer>
-
-<script src="script.js"></script> <!-- Lien vers le fichier JavaScript -->
-
-  
+    <p>&copy; 2025 MédédéTontine. Tous droits réservés.</p>
+  </footer>
+  <script src="script.js"></script>
 </body>
 </html>
